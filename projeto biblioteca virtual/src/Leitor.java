@@ -6,6 +6,8 @@ public class Leitor {
     Livro livroDesejado;
     PilhaHistorico historico;
 
+
+
     public Leitor(String nome){
         this.nome = nome;
         this.historico = new PilhaHistorico();
@@ -73,5 +75,26 @@ public class Leitor {
         System.out.println(this.nome + " esta visualizando livro:");
         livro.mostrarLivro();
         historico.adicionarNoHistoricoVisualizacao(livro);
+    }
+
+    public void mostrarIndicacao(GrafoIndicacao indicacaoLivro){
+         if(this.historico.historicoVizualizacao != null && this.historico.historicoEmprestimo != null ) {
+             for (Livro livro : this.historico.historicoVizualizacao) {
+                 indicacaoLivro.mostrarIndicacao(livro);
+             }
+             for (Livro livro: this.historico.historicoEmprestimo){
+                 indicacaoLivro.mostrarIndicacao(livro);
+             }
+         } else if (this.historico.historicoVizualizacao != null && this.historico.historicoEmprestimo == null) {
+             for (Livro livro : this.historico.historicoVizualizacao) {
+                 indicacaoLivro.mostrarIndicacao(livro);
+             }
+         } else if (this.historico.historicoVizualizacao == null && this.historico.historicoEmprestimo != null) {
+             for (Livro livro: this.historico.historicoEmprestimo){
+                 indicacaoLivro.mostrarIndicacao(livro);
+             }
+         }else{
+             System.out.println("não temos indicação para vc pois não temos informações de seus emprestimos passados em nosso banco de dados");
+         }
     }
 }
