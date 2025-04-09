@@ -55,7 +55,7 @@ public class Leitor {
                     livro.disponivel = false;
                     emprestimo = livro;
                     historico.adicionarNoHistoricoEmprestimo(livro);
-                    System.out.println("Emprestimo livro: " + livro.titulo + " concluido");
+                    System.out.println("Emprestimo livro: " +"("+ livro.titulo +")"+" por leitor: "+this.nome+ " concluido");
                     return "emprestado";
 
                 } else if (tituloLivro.equals(livro.titulo) && livro.disponivel == false) {
@@ -74,6 +74,7 @@ public class Leitor {
     public void visualizarLivro(Livro livro){
         System.out.println(this.nome + " esta visualizando livro:");
         livro.mostrarLivro();
+        System.out.println();
         historico.adicionarNoHistoricoVisualizacao(livro);
     }
 
@@ -85,13 +86,16 @@ public class Leitor {
              for (Livro livro: this.historico.historicoEmprestimo){
                  indicacaoLivro.mostrarIndicacao(livro);
              }
-         } else if (this.historico.historicoVizualizacao != null && this.historico.historicoEmprestimo == null) {
+             System.out.println("------------------------------------------------------------------------------------------");
+         } else if (this.historico.historicoVizualizacao != null ) {
              for (Livro livro : this.historico.historicoVizualizacao) {
                  indicacaoLivro.mostrarIndicacao(livro);
              }
-         } else if (this.historico.historicoVizualizacao == null && this.historico.historicoEmprestimo != null) {
+             System.out.println("------------------------------------------------------------------------------------------");
+         } else if (this.historico.historicoEmprestimo != null) {
              for (Livro livro: this.historico.historicoEmprestimo){
                  indicacaoLivro.mostrarIndicacao(livro);
+                 System.out.println("------------------------------------------------------------------------------------------");
              }
          }else{
              System.out.println("não temos indicação para vc pois não temos informações de seus emprestimos passados em nosso banco de dados");

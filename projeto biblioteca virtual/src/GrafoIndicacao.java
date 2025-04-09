@@ -22,8 +22,9 @@ public class GrafoIndicacao {
 
     public void mostrarIndicacao(Livro livro){
         for(Livro livro1 : this.ligarLivros.get(livro)){
-            System.out.println(livro1.titulo);
+            System.out.print("inicações baseada em livro: "+"("+livro.titulo+")"+" -> "+livro1.titulo+" | ");
         }
+        System.out.println();
     }
 
     public void mostrarLivrosChave(){

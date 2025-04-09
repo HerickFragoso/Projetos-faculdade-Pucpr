@@ -16,7 +16,7 @@ public class Livro {
     }
 
     public void mostrarLivro(){
-        System.out.print("titulo:"+titulo+" | "+"Autor:"+autor+" | "+"Ano lançamento:"+ anoLancamento);
+        System.out.print("titulo:"+"("+titulo+" | "+"Autor:"+autor+" | "+"Ano lançamento:"+ anoLancamento+")");
     }
 
     public void mostrarFilaEspera(){
