@@ -67,6 +67,24 @@ public class Main {
         indicacaoLivro.adicionarLigacao(livro12,livro10);
         indicacaoLivro.adicionarLigacao(livro12,livro11);
 
+        leitor1.visualizarLivro(livro1);
+        leitor1.emprestarLivro(bibliotecaVirtual,livro12.titulo);
+        leitor1.mostrarIndicacao(indicacaoLivro);
+
+        leitor2.visualizarLivro(livro5);
+        leitor2.emprestarLivro(bibliotecaVirtual,livro1.titulo);
+        leitor2.mostrarIndicacao(indicacaoLivro);
+
+        leitor3.visualizarLivro(livro8);
+        leitor3.emprestarLivro(bibliotecaVirtual,livro6.titulo);
+        leitor3.mostrarIndicacao(indicacaoLivro);
+
+        leitor4.visualizarLivro(livro11);
+        leitor4.emprestarLivro(bibliotecaVirtual,livro9.titulo);
+        leitor4.mostrarIndicacao(indicacaoLivro);
+
+
+
 
 
 
